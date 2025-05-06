@@ -55,10 +55,9 @@ export default function Intro() {
             h-3/4
             w-3/4
             bg-black/70 border border-transparent rounded-3xl
-            shadow-md
             transition-transform duration-300 ease-in transform-gpu
-            hover: shadow-lime-400
-            hover:shadow-xl/30
+            hover: shadow-gray-600
+            hover: shadow-2xl
             hover:scale-110
             hover:translate-y-2
             flex items-center justify-center 
@@ -80,15 +79,15 @@ export default function Intro() {
               Hi, I&apos;m Erwien Tjipta Wijaya
             </div>
             <div className="font-[family-name:var(--font-luckies-sans)] md:text-lg text-base font-medium text-gray-300 text-center mb-4">
-              I&apos;m a Full-stack Data Profesional and Full-stack SaaS
+              I&apos;m a Full-stack Data Professional and Full-stack Web
               Developer who loves building cloud apps. I also enjoy teaching
               others as an Educator and sharing my knowledge as a Consultant.
             </div>
-            <div className="font-[family-name:var(--font-cascadia_code)] md:text-base text-sm font-semibold text-lime-500 text-center">
+            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-base text-sm font-semibold text-gray-300 text-center">
               <FaQuoteRight />
             </div>
-            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-lg text-base font-semibold text-lime-500 text-center mb-2">
-              Just let me know what&apos;s on your mind, and I&apos;ll try to
+            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-lg text-base font-semibold text-gray-300 text-center mb-2">
+              Just let me know what&#39;s on your mind, and I&#39;ll try to
               bring it to the world
             </div>
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-base font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-2">
