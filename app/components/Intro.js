@@ -5,6 +5,8 @@ import BounceButton from "./BounceButton";
 import SocialLinks from "./SocialLinks";
 import LinkButton from "./LinkButton";
 
+import CallMe from "./CallMe";
+
 import { useState, useEffect } from "react";
 
 export default function Intro() {
@@ -49,13 +51,13 @@ export default function Intro() {
           className="
             relative z-10 
             sm:h-8/12 
-            sm:w-8/12 
+            sm:w-7/12 
             h-3/4
             w-3/4
             bg-black/70 border border-transparent rounded-3xl
-            shadow-lg
+            shadow-md
             transition-transform duration-300 ease-in transform-gpu
-            outline outline-black/50
+            hover: shadow-lime-400
             hover:shadow-xl/30
             hover:scale-110
             hover:translate-y-2
@@ -76,22 +78,21 @@ export default function Intro() {
             </div>
             <div className="font-[family-name:var(--font-luckies-sans)] md:text-xl text-base font-medium text-amber-300 text-center mb-4">
               Hi, I&apos;m Erwien Tjipta Wijaya
-              <br /> (Indonesian 🇮🇩)
             </div>
-            <div className="font-[family-name:var(--font-luckies-sans)] md:text-lg text-base font-medium text-gray-300 text-center mb-2">
+            <div className="font-[family-name:var(--font-luckies-sans)] md:text-lg text-base font-medium text-gray-300 text-center mb-4">
               I&apos;m a Full-stack Data Profesional and Full-stack SaaS
               Developer who loves building cloud apps. I also enjoy teaching
               others as an Educator and sharing my knowledge as a Consultant.
             </div>
-            <div className="font-[family-name:var(--font-shantell_sans)] md:text-base text-sm font-semibold text-teal-400 text-center">
+            <div className="font-[family-name:var(--font-cascadia_code)] md:text-base text-sm font-semibold text-lime-500 text-center">
               <FaQuoteRight />
             </div>
-            <div className="font-[family-name:var(--font-shantell_sans)] md:text-lg text-base font-semibold text-teal-400 text-center mb-2">
+            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-lg text-base font-semibold text-lime-500 text-center mb-2">
               Just let me know what&apos;s on your mind, and I&apos;ll try to
               bring it to the world
             </div>
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-base font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-2">
-              <BounceButton className="hover:bg-red-400/50 hover:text-white">
+              <BounceButton className="hover:bg-amber-400/50 hover:text-white">
                 <CgProfile className="mr-2" />
                 See on My Profile
               </BounceButton>
@@ -124,7 +125,7 @@ export default function Intro() {
             flex items-center justify-center 
             "
         >
-          tes
+          <CallMe />
         </div>
       )}
     </div>
