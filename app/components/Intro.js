@@ -50,21 +50,13 @@ export default function Intro() {
         <div
           className="
             relative z-10 
-            sm:h-8/12 
-            sm:w-7/12 
-            h-3/4
-            w-3/4
-            bg-black/70 border border-transparent rounded-3xl
             transition-transform duration-300 ease-in transform-gpu
-            hover: shadow-gray-600
-            hover: shadow-2xl
-            hover:scale-110
-            hover:translate-y-2
             flex items-center justify-center 
+            md:mx-32 mx-4
             "
         >
-          <div className="flex flex-col items-center justify-center ml-5 mr-5">
-            <div className="relative mt-5 mb-5">
+          <div className="flex flex-col items-center justify-center">
+            <div className="relative my-5 rounded-2xl overflow-hidden">
               <Image
                 aria-hidden
                 src="/images/Tlh5S9DCv2M5YRcC1qxZJVUfqIVyYRwt95hUR1MlVawCDlIPly1bicXy8TYY5gsO.jpg"
@@ -72,41 +64,41 @@ export default function Intro() {
                 width={160}
                 height={38}
                 priority
-                className="rounded-2xl w-36 h-36 filter grayscale-70 shadow-lg bg-transparent"
+                className="md:w-44 md:h-48 w-32 h-36 filter grayscale-70 transition-transform rounded-2xl"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-80% rounded-2xl z-20"></div>
             </div>
-            <div className="font-[family-name:var(--font-luckies-sans)] md:text-xl text-base font-medium text-amber-300 text-center mb-4">
-              Hi, I&apos;m Erwien Tjipta Wijaya
+            <div className="font-[family-name:var(--font-luckies-sans)] md:text-2xl text-base font-medium text-orange-400 text-center mb-4">
+              <span className="text-gray-300">Hi, I&apos;m</span> Erwien Tjipta
+              Wijaya
             </div>
-            <div className="font-[family-name:var(--font-luckies-sans)] md:text-lg text-base font-medium text-gray-300 text-center mb-4">
-              I&apos;m a Full-stack Data Professional and Full-stack Web
-              Developer who loves building cloud apps. I also enjoy teaching
-              others as an Educator and sharing my knowledge as a Consultant.
+            <div className="font-[family-name:var(--font-luckies-sans)] md:text-3xl text-base font-medium text-gray-300 text-center md:my-6 my-4 flex-row">
+              as a{" "}
+              <span className="text-orange-300">
+                Full-stack Data Professional
+              </span>{" "}
+              and{" "}
+              <span className="text-orange-300">Full-stack Web Developer</span>{" "}
+              who loves building cloud apps. <div></div>I also enjoy teaching as
+              an <span className="text-orange-300">Educator</span>.
             </div>
-            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-base text-sm font-semibold text-gray-300 text-center">
-              <FaQuoteRight />
-            </div>
-            <div className="font-[family-name:var(--font-ubuntu_sans)] md:text-lg text-base font-semibold text-gray-300 text-center mb-2">
-              Just let me know what&#39;s on your mind, and I&#39;ll try to
-              bring it to the world
-            </div>
-            <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-base font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-2">
-              <BounceButton className="hover:bg-amber-400/50 hover:text-white">
+            <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-8 md:my-10">
+              <BounceButton className="hover:bg-orange-300/50 hover:text-white">
                 <CgProfile className="mr-2" />
                 See on My Profile
               </BounceButton>
               <BounceButton
                 onClick={callMe}
-                className="hover:bg-lime-500/50 hover:text-white"
+                className="hover:bg-lime-400/50 hover:text-white"
               >
                 <FaPhoneAlt className="mr-2" />
                 Let&apos;s Rock and Roll
               </BounceButton>
             </div>
-            <div className="text-center my-2 text-gray-400">
+            <div className="text-center text-gray-400">
               <SocialLinks />
             </div>
-            <div className="font-[family-name:var(--font-poppins-sans)] font-semibold text-center my-2 text-gray-300">
+            <div className="font-[family-name:var(--font-poppins-sans)] font-semibold text-center my-4 text-gray-300">
               <LinkButton url="" label="Developed By My-own / 自分で開発した" />
             </div>
           </div>
@@ -119,7 +111,6 @@ export default function Intro() {
             relative z-10 
             h-screen
             w-screen
-            bg-black/70 border border-transparent
             transition-transform duration-300 ease-in transform-gpu
             flex items-center justify-center 
             "

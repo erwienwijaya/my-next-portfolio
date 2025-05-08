@@ -23,12 +23,14 @@ export default function Home() {
   return (
     <main className="relative h-screen w-full">
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center filter grayscale-100"
+        className="absolute inset-0 z-0 bg-cover bg-center filter grayscale-100 "
         style={{
           backgroundImage: `url(${bgChange})`,
         }}
       />
-      <Intro />
+      <div className="absolute inset-0 z-10 bg-black/90">
+        <Intro />
+      </div>
     </main>
   );
 }
