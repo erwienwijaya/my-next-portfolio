@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaPhoneAlt, FaQuoteRight } from "react-icons/fa";
+import { FaPhoneAlt, FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import BounceButton from "./BounceButton";
 import SocialLinks from "./SocialLinks";
@@ -19,7 +19,7 @@ export default function Intro() {
     setIsAnimating(true);
   }, []);
 
-  const callMe = () => {
+  const callToAction = () => {
     setTimeout(() => {
       setIsInvisible(true);
       setIsAnimating(false);
@@ -35,6 +35,9 @@ export default function Intro() {
         if (isIntro && !isCallMe) {
           setIsIntro(false);
           setIsCallMe(true);
+        } else if (!isIntro && isCallMe) {
+          setIsIntro(true);
+          setIsCallMe(false);
         }
       }, 500);
       return () => clearTimeout(timer);
@@ -85,14 +88,14 @@ export default function Intro() {
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-8 md:my-10">
               <BounceButton className="hover:bg-orange-300/50 hover:text-white">
                 <CgProfile className="mr-2" />
-                See on My Profile
+                View My Profile
               </BounceButton>
               <BounceButton
-                onClick={callMe}
+                onClick={callToAction}
                 className="hover:bg-lime-400/50 hover:text-white"
               >
                 <FaPhoneAlt className="mr-2" />
-                Let&apos;s Rock and Roll
+                Who Am I
               </BounceButton>
             </div>
             <div className="text-center text-gray-400">
@@ -115,7 +118,22 @@ export default function Intro() {
             flex items-center justify-center 
             "
         >
-          <CallMe />
+          <div className="grid grid-rows-2'">
+            <CallMe />
+            <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-4 md:my-6">
+              <BounceButton
+                onClick={callToAction}
+                className="hover:bg-teal-300/50 hover:text-white"
+              >
+                <FaHome className="mr-2" />
+                Hit Me Back
+              </BounceButton>
+              <BounceButton className="hover:bg-orange-300/50 hover:text-white">
+                <CgProfile className="mr-2" />
+                View My Profile
+              </BounceButton>
+            </div>
+          </div>
         </div>
       )}
     </div>

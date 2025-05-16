@@ -44,7 +44,7 @@ export default function CallMe() {
             Scientist. Also open to work as a Lecturer or Mentor at a University
             or work on a project basis. If you want to reach more information
             about me, please don&apos;t hesitate to chat or call. I&apos;m eager
-            to get connected and collaborate with you.
+            to get connected and collaborate with you. Let&apos;s Rock and Roll!
           </div>
 
           <div className="text-left font-medium justify-end">
