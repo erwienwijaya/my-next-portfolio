@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { FaPhoneAlt, FaHome } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
+import { FaHouseUser, FaAddressCard } from "react-icons/fa";
+import { ImUserTie, ImProfile } from "react-icons/im";
 import BounceButton from "./BounceButton";
 import SocialLinks from "./SocialLinks";
 import LinkButton from "./LinkButton";
@@ -86,15 +86,15 @@ export default function Intro() {
               an <span className="text-orange-300">Educator</span>.
             </div>
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-8 md:my-10">
-              <BounceButton className="hover:bg-orange-300/50 hover:text-white">
-                <CgProfile className="mr-2" />
+              <BounceButton className="md:w-54 w-48 hover:bg-orange-400/50 hover:text-white">
+                <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
               <BounceButton
                 onClick={callToAction}
-                className="hover:bg-lime-400/50 hover:text-white"
+                className="md:w-54 w-48 hover:bg-lime-400/50 hover:text-white"
               >
-                <FaPhoneAlt className="mr-2" />
+                <ImUserTie className="mr-2" />
                 Who Am I
               </BounceButton>
             </div>
@@ -123,13 +123,13 @@ export default function Intro() {
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-4 md:my-6">
               <BounceButton
                 onClick={callToAction}
-                className="hover:bg-teal-300/50 hover:text-white"
+                className="md:w-54 w-48 hover:bg-teal-300/50 hover:text-white"
               >
-                <FaHome className="mr-2" />
+                <FaHouseUser className="mr-2" />
                 Hit Me Back
               </BounceButton>
-              <BounceButton className="hover:bg-orange-300/50 hover:text-white">
-                <CgProfile className="mr-2" />
+              <BounceButton className="md:w-54 w-48  hover:bg-orange-400/50 hover:text-white">
+                <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
             </div>
