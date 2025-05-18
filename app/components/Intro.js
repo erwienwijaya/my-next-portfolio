@@ -111,11 +111,11 @@ export default function Intro() {
       {isCallMe && (
         <div
           className="
-            relative z-10 
+            relative z-10
             h-screen
             w-screen
             transition-transform duration-300 ease-in transform-gpu
-            flex items-center justify-center 
+            flex items-center justify-center
             "
         >
           <div className="grid grid-rows-2'">

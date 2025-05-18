@@ -17,7 +17,7 @@ export default function CallMe() {
             className="text-justify font-medium md:text-lg text-base flex justify-start mb-4 h-80"
             contentEditable={false}
           >
-            <ScrollDetection className={`scroll-container`}>
+            <ScrollDetection>
               I&apos;ve been walking through tons of experiences as a Software
               Engineer. Since 2002, I&apos;ve also dealt with various projects
               from government and private companies. My skill, technique, and
