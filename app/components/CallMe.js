@@ -1,5 +1,5 @@
 import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
-import { ScrollDetection } from "../components";
+import { ScrollSwipeDetection } from "../components";
 
 export default function CallMe() {
   return (
@@ -17,7 +17,7 @@ export default function CallMe() {
             className="text-justify font-medium md:text-lg text-base flex justify-start mb-4 h-80"
             contentEditable={false}
           >
-            <ScrollDetection>
+            <ScrollSwipeDetection>
               I&apos;ve been walking through tons of experiences as a Software
               Engineer. Since 2002, I&apos;ve also dealt with various projects
               from government and private companies. My skill, technique, and
@@ -47,7 +47,7 @@ export default function CallMe() {
               on a project basis. If you want to reach more information about
               me, please don&apos;t hesitate to chat or call. I&apos;m eager to
               get connected and collaborate with you.
-            </ScrollDetection>
+            </ScrollSwipeDetection>
           </div>
 
           <div className="text-left font-medium justify-end">
