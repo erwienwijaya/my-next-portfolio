@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import { MdOutlineSwipeUp } from "react-icons/md";
+import { MdOutlineSwipeVertical } from "react-icons/md";
 
 export default function ScrollDetection({ children, className }) {
   const containerRef = useRef(null);
   const [isScrollActive, setIsScrollActive] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [isSwiping, setIsSwiping] = useState(false);
-  const touchStartY = useRef(null);
-  const touchStartX = useRef(null);
+  // const [isSwiping, setIsSwiping] = useState(false);
+  // const touchStartY = useRef(null);
+  // const touchStartX = useRef(null);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -30,40 +30,40 @@ export default function ScrollDetection({ children, className }) {
     };
 
     // swipe touch detection
-    const handleTouchStart = (e) => {
-      const touch = e.touches[0];
-      touchStartY.current = touch.clientY;
-      touchStartX.current = touch.clientX;
-      // setIsSwiping(false);
-    };
+    // const handleTouchStart = (e) => {
+    //   const touch = e.touches[0];
+    //   touchStartY.current = touch.clientY;
+    //   touchStartX.current = touch.clientX;
+    //   setIsSwiping(false);
+    // };
 
-    const handleTouchMove = (e) => {
-      const touch = e.touches[0];
-      const deltaY = Math.abs(touch.clientY - touchStartY.current);
-      const deltaX = Math.abs(touch.clientX - touchStartX.current);
+    // const handleTouchMove = (e) => {
+    //   const touch = e.touches[0];
+    //   const deltaY = Math.abs(touch.clientY - touchStartY.current);
+    //   const deltaX = Math.abs(touch.clientX - touchStartX.current);
 
-      // Threshold detection for swipe (etc 10px)
-      if (deltaY > 10 || deltaX > 10) {
-        setIsSwiping(true);
-      }
-    };
+    //   //Threshold detection for swipe (etc 10px)
+    //   if (deltaY > 10 || deltaX > 10) {
+    //     setIsSwiping(true);
+    //   }
+    // };
 
-    const handleTouchEnd = () => {
-      setIsSwiping(false);
-    };
+    // const handleTouchEnd = () => {
+    //   setIsSwiping(false);
+    // };
 
     window.addEventListener("wheel", handleWheel);
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
+    // window.addEventListener("touchstart", handleTouchStart);
+    // window.addEventListener("touchmove", handleTouchMove);
+    // window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener("resize", checkScroll);
 
       window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
+      // window.removeEventListener("touchstart", handleTouchStart);
+      // window.removeEventListener("touchmove", handleTouchMove);
+      // window.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
@@ -74,9 +74,9 @@ export default function ScrollDetection({ children, className }) {
     >
       {isScrollActive && !isScrolling ? (
         <div className="absolute inset-0 z-20 pointer-events-none flex flex-col items-center justify-center animate-bounce">
-          <MdOutlineSwipeUp className="text-9xl text-gray-300" />
+          <MdOutlineSwipeVertical className="text-9xl text-gray-300" />
           <span className="mt-2 text-gray-300 font-bold text-xl">
-            Scroll / Swipe
+            Scroll Up / Down
           </span>
         </div>
       ) : (
