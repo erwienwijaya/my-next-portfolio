@@ -12,10 +12,12 @@ import { useState, useEffect } from "react";
 export default function Intro() {
   const [isInvisible, setIsInvisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [isAnimateIntro, setIsAnimateIntro] = useState(false);
-  const [isAnimateCallMe, setIsAnimateCallMe] = useState(false);
+  const [isHandleIntro, setIsHandleIntro] = useState(false);
+  const [isHandleCallMe, setIsHandleCallMe] = useState(false);
+  const [isHandleProfile, setIsHandleProfile] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
   const [isCallMe, setIsCallMe] = useState(false);
+  const [isProfile, setIsProfile] = useState(false);
 
   useEffect(() => {
     setIsAnimating(true);
@@ -25,19 +27,30 @@ export default function Intro() {
     setIsInvisible(true);
     setIsAnimating(false);
   };
-  const CTACallMe = () => {
+  const ChangeToCallMe = () => {
     setTimeout(() => {
       Move();
-      setIsAnimateCallMe(true);
-      setIsAnimateIntro(false);
+      setIsHandleCallMe(true);
+      setIsHandleIntro(false);
+      setIsHandleProfile(false);
     }, 300);
   };
 
-  const CTAIntro = () => {
+  const ChangeToIntro = () => {
     setTimeout(() => {
       Move();
-      setIsAnimateCallMe(false);
-      setIsAnimateIntro(true);
+      setIsHandleCallMe(false);
+      setIsHandleIntro(true);
+      setIsHandleProfile(false);
+    }, 300);
+  };
+
+  const ChangeToProfile = () => {
+    setTimeout(() => {
+      Move();
+      setIsHandleCallMe(false);
+      setIsHandleIntro(false);
+      setIsHandleProfile(true);
     }, 300);
   };
 
@@ -47,24 +60,17 @@ export default function Intro() {
         setIsInvisible(false);
         setIsAnimating(true);
 
-        // if (isIntro && !isCallMe) {
-        //   setIsIntro(false);
-        //   setIsCallMe(true);
-        // } else if (!isIntro && isCallMe) {
-        //   setIsIntro(true);
-        //   setIsCallMe(false);
-        // }
-        if (!isAnimateIntro && isAnimateCallMe) {
+        if (!isHandleIntro && isHandleCallMe) {
           setIsIntro(false);
           setIsCallMe(true);
-        } else if (isAnimateIntro && !isAnimateCallMe) {
+        } else if (isHandleIntro && !isHandleCallMe) {
           setIsIntro(true);
           setIsCallMe(false);
         }
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [isAnimateIntro, isAnimateCallMe, isInvisible]);
+  }, [isHandleIntro, isHandleCallMe, isInvisible]);
 
   return (
     <div
@@ -113,7 +119,7 @@ export default function Intro() {
                 View My Profile
               </BounceButton>
               <BounceButton
-                onClick={CTACallMe}
+                onClick={ChangeToCallMe}
                 className="md:w-54 w-48 hover:bg-lime-400/50 hover:text-white"
               >
                 <ImUserTie className="mr-2" />
@@ -144,7 +150,7 @@ export default function Intro() {
             <CallMe />
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-4 md:my-6">
               <BounceButton
-                onClick={CTAIntro}
+                onClick={ChangeToIntro}
                 className="md:w-54 w-48 hover:bg-teal-300/50 hover:text-white"
               >
                 <FaHouseUser className="mr-2" />
