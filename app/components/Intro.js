@@ -12,6 +12,8 @@ import { useState, useEffect } from "react";
 export default function Intro() {
   const [isInvisible, setIsInvisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isAnimateIntro, setIsAnimateIntro] = useState(false);
+  const [isAnimateCallMe, setIsAnimateCallMe] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
   const [isCallMe, setIsCallMe] = useState(false);
 
@@ -19,10 +21,23 @@ export default function Intro() {
     setIsAnimating(true);
   }, []);
 
-  const callToAction = () => {
+  const Move = () => {
+    setIsInvisible(true);
+    setIsAnimating(false);
+  };
+  const CTACallMe = () => {
     setTimeout(() => {
-      setIsInvisible(true);
-      setIsAnimating(false);
+      Move();
+      setIsAnimateCallMe(true);
+      setIsAnimateIntro(false);
+    }, 300);
+  };
+
+  const CTAIntro = () => {
+    setTimeout(() => {
+      Move();
+      setIsAnimateCallMe(false);
+      setIsAnimateIntro(true);
     }, 300);
   };
 
@@ -32,17 +47,24 @@ export default function Intro() {
         setIsInvisible(false);
         setIsAnimating(true);
 
-        if (isIntro && !isCallMe) {
+        // if (isIntro && !isCallMe) {
+        //   setIsIntro(false);
+        //   setIsCallMe(true);
+        // } else if (!isIntro && isCallMe) {
+        //   setIsIntro(true);
+        //   setIsCallMe(false);
+        // }
+        if (!isAnimateIntro && isAnimateCallMe) {
           setIsIntro(false);
           setIsCallMe(true);
-        } else if (!isIntro && isCallMe) {
+        } else if (isAnimateIntro && !isAnimateCallMe) {
           setIsIntro(true);
           setIsCallMe(false);
         }
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [isCallMe, isIntro, isInvisible]);
+  }, [isAnimateIntro, isAnimateCallMe, isInvisible]);
 
   return (
     <div
@@ -91,7 +113,7 @@ export default function Intro() {
                 View My Profile
               </BounceButton>
               <BounceButton
-                onClick={callToAction}
+                onClick={CTACallMe}
                 className="md:w-54 w-48 hover:bg-lime-400/50 hover:text-white"
               >
                 <ImUserTie className="mr-2" />
@@ -122,7 +144,7 @@ export default function Intro() {
             <CallMe />
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-4 md:my-6">
               <BounceButton
-                onClick={callToAction}
+                onClick={CTAIntro}
                 className="md:w-54 w-48 hover:bg-teal-300/50 hover:text-white"
               >
                 <FaHouseUser className="mr-2" />

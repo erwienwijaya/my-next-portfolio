@@ -45,8 +45,8 @@ export default function CallMe() {
               Engineer, Full-Stack Developer, Data Analyst, and Data Scientist.
               Also open to work as a Lecturer or Mentor at a University or work
               on a project basis. If you want to reach more information about
-              me, please don&apos;t hesitate to chat or call. I&apos;m eager to
-              get connected and collaborate with you.
+              me, please don&apos;t hesitate to chat or call. I&apos;m looking
+              forward to get connected and collaborate with you.
             </ScrollSwipeDetection>
           </div>
 
