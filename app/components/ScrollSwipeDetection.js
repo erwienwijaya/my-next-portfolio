@@ -16,6 +16,7 @@ export default function ScrollDetection({ children, className }) {
 
     const checkScroll = () => {
       setIsScrollActive(el.scrollHeight > el.clientHeight);
+      setIsScrolling(false);
     };
 
     checkScroll();
@@ -86,7 +87,7 @@ export default function ScrollDetection({ children, className }) {
         className={`relative z-10 ${
           isScrollActive && !isScrolling
             ? "text-gray-800/50 cursor-pointer"
-            : "transition-colors duration-300 ease-in-out delay-300"
+            : "transition-colors duration-300 ease-in-out delay-300 cursor-all-scroll"
         } `}
       >
         {children}

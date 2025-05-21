@@ -99,7 +99,7 @@ export default function Intro() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-80% rounded-2xl z-20"></div>
             </div>
-            <div className="font-[family-name:var(--font-luckies-sans)] md:text-2xl text-base font-medium text-orange-400 text-center mb-4">
+            <div className="font-[family-name:var(--font-luckies-sans)] md:text-3xl text-lg font-medium text-orange-400 text-center mb-4">
               <span className="text-gray-300">Hi, I&apos;m</span> Erwien Tjipta
               Wijaya
             </div>
