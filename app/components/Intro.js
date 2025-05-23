@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { FaHouseUser, FaAddressCard } from "react-icons/fa";
 import { ImUserTie, ImProfile } from "react-icons/im";
-import BounceButton from "./BounceButton";
-import SocialLinks from "./SocialLinks";
-import LinkButton from "./LinkButton";
 
-import CallMe from "./CallMe";
+import {
+  BounceButton,
+  SocialLinks,
+  LinkButton,
+  CallMe,
+  Profile,
+} from "../components";
 
 import { useState, useEffect } from "react";
 
@@ -27,7 +30,9 @@ export default function Intro() {
     setIsInvisible(true);
     setIsAnimating(false);
   };
-  const ChangeToCallMe = () => {
+
+  // event listener click CallMe
+  const changeToCallMe = () => {
     setTimeout(() => {
       Move();
       setIsHandleCallMe(true);
@@ -36,7 +41,8 @@ export default function Intro() {
     }, 300);
   };
 
-  const ChangeToIntro = () => {
+  // event listener click Intro
+  const changeToIntro = () => {
     setTimeout(() => {
       Move();
       setIsHandleCallMe(false);
@@ -45,7 +51,8 @@ export default function Intro() {
     }, 300);
   };
 
-  const ChangeToProfile = () => {
+  // event listener click Profile
+  const changeToProfile = () => {
     setTimeout(() => {
       Move();
       setIsHandleCallMe(false);
@@ -60,17 +67,22 @@ export default function Intro() {
         setIsInvisible(false);
         setIsAnimating(true);
 
-        if (!isHandleIntro && isHandleCallMe) {
-          setIsIntro(false);
+        // reset all states
+        setIsIntro(false);
+        setIsCallMe(false);
+        setIsProfile(false);
+
+        if (!isHandleIntro && isHandleCallMe && !isHandleProfile) {
           setIsCallMe(true);
-        } else if (isHandleIntro && !isHandleCallMe) {
+        } else if (isHandleIntro && !isHandleCallMe && !isHandleProfile) {
           setIsIntro(true);
-          setIsCallMe(false);
+        } else if (!isHandleIntro && !isHandleCallMe && isHandleProfile) {
+          setIsProfile(true);
         }
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [isHandleIntro, isHandleCallMe, isInvisible]);
+  }, [isHandleIntro, isHandleCallMe, isHandleProfile, isInvisible]);
 
   return (
     <div
@@ -114,13 +126,16 @@ export default function Intro() {
               an <span className="text-orange-300">Educator</span>.
             </div>
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-8 md:my-10">
-              <BounceButton className="md:w-54 w-48 hover:bg-orange-400/50 hover:text-white">
+              <BounceButton
+                onClick={changeToProfile}
+                className="md:w-54 w-46 hover:bg-orange-400/50 hover:text-white"
+              >
                 <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
               <BounceButton
-                onClick={ChangeToCallMe}
-                className="md:w-54 w-48 hover:bg-lime-400/50 hover:text-white"
+                onClick={changeToCallMe}
+                className="md:w-54 w-46 hover:bg-lime-400/50 hover:text-white"
               >
                 <ImUserTie className="mr-2" />
                 Who Am I
@@ -143,24 +158,44 @@ export default function Intro() {
             h-screen
             w-screen
             transition-transform duration-300 ease-in transform-gpu
-            flex items-center justify-center
+            flex flex-warp items-center justify-center
             "
         >
-          <div className="grid grid-rows-2'">
+          <div className="grid grid-rows'">
             <CallMe />
-            <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-4 md:my-6">
+            <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center  my-4 md:my-6">
               <BounceButton
-                onClick={ChangeToIntro}
-                className="md:w-54 w-48 hover:bg-teal-300/50 hover:text-white"
+                onClick={changeToIntro}
+                className="md:w-54 w-46 hover:bg-teal-300/50 hover:text-white"
               >
                 <FaHouseUser className="mr-2" />
                 Hit Me Back
               </BounceButton>
-              <BounceButton className="md:w-54 w-48  hover:bg-orange-400/50 hover:text-white">
+              <BounceButton
+                onClick={changeToProfile}
+                className="md:w-54 w-46  hover:bg-orange-400/50 hover:text-white"
+              >
                 <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
             </div>
+          </div>
+        </div>
+      )}
+
+      {isProfile && (
+        <div
+          className="
+            relative z-10
+            bg-black
+            h-screen
+            w-screen
+            transition-transform duration-300 ease-in transform-gpu
+            flex items-center justify-center
+            "
+        >
+          <div className="grid grid-rows-2'">
+            <Profile />
           </div>
         </div>
       )}

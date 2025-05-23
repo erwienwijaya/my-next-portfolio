@@ -87,7 +87,7 @@ export default function ScrollDetection({ children, className }) {
         className={`relative z-10 ${
           isScrollActive && !isScrolling
             ? "text-gray-800/50 cursor-pointer"
-            : "transition-colors duration-300 ease-in-out delay-300 cursor-all-scroll"
+            : "transition-colors duration-300 ease-in-out delay-300"
         } `}
       >
         {children}
