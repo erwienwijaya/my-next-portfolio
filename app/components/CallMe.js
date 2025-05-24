@@ -14,10 +14,10 @@ export default function CallMe() {
           </div>
 
           <div
-            className="text-justify font-medium md:text-lg text-base flex justify-start mb-4 h-80"
+            className="text-justify font-medium md:text-lg text-base flex justify-start mb-4"
             contentEditable={false}
           >
-            <ScrollSwipeDetection>
+            <ScrollSwipeDetection className={`h-96`}>
               I&apos;ve been walking through tons of experiences as a Software
               Engineer. Since 2002, I&apos;ve also dealt with various projects
               from government and private companies. My skill, technique, and
@@ -25,7 +25,7 @@ export default function CallMe() {
               year by year. With the development of age in time, the technology
               never stops at one point only. That makes me aware to keep updated
               and move from my comfort zone with learning new technology such as
-              new programming languages, cloud technology, blockchain, and
+              new programming languages, Cloud Technology, Blockchain, and
               Artificial Intelligence. Currently, I&apos;m focused on Data
               Analytics, Machine Learning, Large Language Models, and SaaS
               Technology. I&apos;m so passionate about new technology, in

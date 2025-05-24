@@ -5,3 +5,4 @@ export { default as BounceButton } from "./BounceButton";
 export { default as SocialLinks } from "./SocialLinks";
 export { default as LinkButton } from "./LinkButton";
 export { default as ScrollSwipeDetection } from "./ScrollSwipeDetection";
+export { default as Footer } from "./Footer";

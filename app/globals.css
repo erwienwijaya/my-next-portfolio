@@ -25,6 +25,10 @@
   /* Chrome, Safari */
 }
 
+.custom-height {
+  height: calc(100vh - 8rem);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

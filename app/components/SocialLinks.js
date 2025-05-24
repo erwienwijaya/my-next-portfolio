@@ -33,7 +33,7 @@ export default function SocialLinks() {
   return (
     <div className="flex flex-row justify-center items-center space-x-6 text-2xl text-orange-400">
       {links.map(({ url, label }, index) => (
-        <LinkButton key={index} url={url} label={label} />
+        <LinkButton key={index} url={url} newTab={true} label={label} />
       ))}
     </div>
   );

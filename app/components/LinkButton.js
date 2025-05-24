@@ -1,6 +1,11 @@
-export default function LinkButton({ url, label, className = "" }) {
+export default function LinkButton({
+  url = "",
+  label,
+  newTab = false,
+  className = "",
+}) {
   const actionClick = () => {
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, newTab ? "_blank" : "_self", "noopener,noreferrer");
   };
 
   return (

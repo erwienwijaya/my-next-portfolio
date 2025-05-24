@@ -1,7 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { MdOutlineSwipeVertical } from "react-icons/md";
 
-export default function ScrollDetection({ children, className }) {
+export default function ScrollDetection({
+  children,
+  className,
+  showCursor = false,
+  smartScroll = true,
+}) {
   const containerRef = useRef(null);
   const [isScrollActive, setIsScrollActive] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -71,21 +76,21 @@ export default function ScrollDetection({ children, className }) {
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-auto border-0 rounded-xl scroll-container ${className}`}
+      className={`relative overflow-auto border-0 rounded-xl w-full ${
+        showCursor ? "" : "scroll-container"
+      } ${className}`}
     >
-      {isScrollActive && !isScrolling ? (
+      {smartScroll && isScrollActive && !isScrolling ? (
         <div className="absolute inset-0 z-20 pointer-events-none flex flex-col items-center justify-center animate-bounce">
           <MdOutlineSwipeVertical className="text-9xl text-gray-300" />
           <span className="mt-2 text-gray-300 font-bold text-xl">
             Scroll Up / Down
           </span>
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
       <div
         className={`relative z-10 ${
-          isScrollActive && !isScrolling
+          smartScroll && isScrollActive && !isScrolling
             ? "text-gray-800/50 cursor-pointer"
             : "transition-colors duration-300 ease-in-out delay-300"
         } `}

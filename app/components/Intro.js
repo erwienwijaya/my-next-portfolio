@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { FaHouseUser, FaAddressCard } from "react-icons/fa";
-import { ImUserTie, ImProfile } from "react-icons/im";
+import { ImUserTie, ImHome } from "react-icons/im";
 
 import {
   BounceButton,
-  SocialLinks,
-  LinkButton,
+  Footer,
   CallMe,
   Profile,
+  LinkButton,
 } from "../components";
 
 import { useState, useEffect } from "react";
@@ -141,12 +141,7 @@ export default function Intro() {
                 Who Am I
               </BounceButton>
             </div>
-            <div className="text-center text-gray-400">
-              <SocialLinks />
-            </div>
-            <div className="font-[family-name:var(--font-poppins-sans)] font-semibold text-center my-4 text-gray-300">
-              <LinkButton url="" label="Developed By My-own / 自分で開発した" />
-            </div>
+            <Footer />
           </div>
         </div>
       )}
@@ -187,15 +182,25 @@ export default function Intro() {
         <div
           className="
             relative z-10
-            bg-black
             h-screen
             w-screen
             transition-transform duration-300 ease-in transform-gpu
             flex items-center justify-center
             "
         >
-          <div className="grid grid-rows-2'">
+          <div className="grid grid-row'">
             <Profile />
+            <div className="absolute bottom-30 right-10 z-30">
+              <BounceButton
+                onClick={changeToIntro}
+                className="md:w-13 w-11 md:h-13 h-11 border-0 rounded-full bg-orange-400 text-black flex items-center justify-center hover:text-white"
+              >
+                <ImHome className="md:text-3xl text-2xl hover:text-white" />
+              </BounceButton>
+            </div>
+            <div className="flex justify-center items-baseline">
+              <Footer />
+            </div>
           </div>
         </div>
       )}
