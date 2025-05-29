@@ -6,3 +6,7 @@ export { default as SocialLinks } from "./SocialLinks";
 export { default as LinkButton } from "./LinkButton";
 export { default as ScrollSwipeDetection } from "./ScrollSwipeDetection";
 export { default as Footer } from "./Footer";
+export { default as ProfilePicture } from "./ProfilePicture";
+export { default as StackRow } from "./StackRow";
+export { default as WorkExperience } from "./WorkExperience";
+export { default as CollapseExpanded } from "./CollapseExpanded";

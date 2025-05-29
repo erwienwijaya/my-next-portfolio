@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaHouseUser, FaAddressCard } from "react-icons/fa";
 import { ImUserTie, ImHome } from "react-icons/im";
 
@@ -7,7 +6,7 @@ import {
   Footer,
   CallMe,
   Profile,
-  LinkButton,
+  ProfilePicture,
 } from "../components";
 
 import { useState, useEffect } from "react";
@@ -100,16 +99,14 @@ export default function Intro() {
         >
           <div className="flex flex-col items-center justify-center">
             <div className="relative my-5 rounded-2xl overflow-hidden">
-              <Image
-                aria-hidden
-                src="/images/Tlh5S9DCv2M5YRcC1qxZJVUfqIVyYRwt95hUR1MlVawCDlIPly1bicXy8TYY5gsO.jpg"
-                alt="Photo of me"
+              <ProfilePicture
+                src={"/images/profile.png"}
+                alt={"Photo of me"}
                 width={160}
                 height={38}
-                priority
-                className="md:w-44 md:h-48 w-32 h-36 filter grayscale-70 transition-transform rounded-2xl"
+                className={`md:w-44 md:h-48 w-32 h-36 rounded-2xl transition-transform`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-80% rounded-2xl z-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-40% rounded-2xl z-20"></div>
             </div>
             <div className="font-[family-name:var(--font-luckies-sans)] md:text-3xl text-lg font-medium text-orange-400 text-center mb-4">
               <span className="text-gray-300">Hi, I&apos;m</span> Erwien Tjipta
@@ -127,17 +124,17 @@ export default function Intro() {
             </div>
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center flex flex-row items-center justify-center my-8 md:my-10">
               <BounceButton
+                icon={<FaAddressCard className="mr-2" />}
                 onClick={changeToProfile}
                 className="md:w-54 w-46 hover:bg-orange-400/50 hover:text-white"
               >
-                <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
               <BounceButton
+                icon={<ImUserTie className="mr-2" />}
                 onClick={changeToCallMe}
                 className="md:w-54 w-46 hover:bg-lime-400/50 hover:text-white"
               >
-                <ImUserTie className="mr-2" />
                 Who Am I
               </BounceButton>
             </div>
@@ -160,17 +157,17 @@ export default function Intro() {
             <CallMe />
             <div className="font-[family-name:var(--font-poppins-sans)] md:text-lg text-sm font-semibold text-gray-400 text-center  my-4 md:my-6">
               <BounceButton
+                icon={<FaHouseUser className="mr-2" />}
                 onClick={changeToIntro}
                 className="md:w-54 w-46 hover:bg-teal-300/50 hover:text-white"
               >
-                <FaHouseUser className="mr-2" />
                 Hit Me Back
               </BounceButton>
               <BounceButton
+                icon={<FaAddressCard className="mr-2" />}
                 onClick={changeToProfile}
                 className="md:w-54 w-46  hover:bg-orange-400/50 hover:text-white"
               >
-                <FaAddressCard className="mr-2" />
                 View My Profile
               </BounceButton>
             </div>
@@ -190,13 +187,14 @@ export default function Intro() {
         >
           <div className="grid grid-row'">
             <Profile />
-            <div className="absolute bottom-30 right-10 z-30">
+            <div className="absolute bottom-26 right-3 z-30">
               <BounceButton
+                icon={
+                  <ImHome className="md:text-3xl text-2xl hover:text-white" />
+                }
                 onClick={changeToIntro}
-                className="md:w-13 w-11 md:h-13 h-11 border-0 rounded-full bg-orange-400 text-black flex items-center justify-center hover:text-white"
-              >
-                <ImHome className="md:text-3xl text-2xl hover:text-white" />
-              </BounceButton>
+                className="md:w-13 w-6 md:h-13 h-11 border-0 rounded-full bg-orange-400 text-black flex items-center justify-center hover:text-white"
+              />
             </div>
             <div className="flex justify-center items-baseline">
               <Footer />

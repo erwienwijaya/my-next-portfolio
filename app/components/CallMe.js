@@ -57,7 +57,7 @@ export default function CallMe() {
             </div>
             <div className="flex flex-row items-center md:text-xl text-lg">
               <IoLogoWhatsapp />
-              <span className="ml-2">+62 81-333-105-149</span>
+              <span className="ml-2">+62 81-333-175-881</span>
             </div>
           </div>
         </div>
