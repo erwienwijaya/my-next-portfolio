@@ -14,7 +14,7 @@ export default function WorkExperience() {
           <div className="text-blue-400 font-semibold mt-4">Description:</div>
           <CollapseExpanded gradient={true} limit={300}>
             Provide theoretical and practical training for the utilization of
-            Docker in courses Analisa Desain dan Sistem Informasi.
+            Docker in courses Analysis of Design and Information Systems.
           </CollapseExpanded>
         </li>
         <li className="mb-6">

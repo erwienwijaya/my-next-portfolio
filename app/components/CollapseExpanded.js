@@ -37,7 +37,7 @@ export default function CollapseExpanded({
 
       {/* gradient overlay */}
       {!isExpanded && isLongChar && gradient && (
-        <div className="pointer-events-none absolute md:bottom-10 rounded-md bottom-5 left-0 right-0 md:h-20 h-30 bg-gradient-to-tl from-transparent via-black/50 to-transparent"></div>
+        <div className="pointer-events-none absolute md:bottom-10 rounded-md bottom-5 left-0 right-0 md:h-15 h-30 bg-gradient-to-t from-black/50 via-black/30 to-transparent"></div>
       )}
 
       {isLongChar && (
