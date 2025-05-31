@@ -9,5 +9,4 @@ export { default as Footer } from "./Footer";
 export { default as ProfilePicture } from "./ProfilePicture";
 export { default as StackRow } from "./StackRow";
 export { default as WorkExperience } from "./WorkExperience";
-export { default as CollapseExpanded } from "./CollapseExpanded";
 export { default as ShowMoreLess } from "./ShowMoreLess";

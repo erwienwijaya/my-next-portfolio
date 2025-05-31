@@ -6,7 +6,6 @@ import {
   BounceButton,
   StackRow,
   WorkExperience,
-  CollapseExpanded,
   ShowMoreLess,
 } from "../components";
 
@@ -69,7 +68,7 @@ export default function Profile() {
                 classLine={`border-t-1 border-orange-400 rounded shadow-md shadow-gray-200 mb-4`}
               >
                 <div className="text-justify md:text-lg text-base">
-                  <ShowMoreLess gradient={true} maxHeight={80}>
+                  <ShowMoreLess gradient={true} maxHeight={100}>
                     With over 20 years of experience in the information
                     technology and education sectors, I am highly motivated to
                     continuously learn and grow. I excel at communicating

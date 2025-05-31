@@ -1,8 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import {
-  IoIosArrowDropupCircle,
-  IoIosArrowDropdownCircle,
-} from "react-icons/io";
+import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 
 export default function ShowMoreLess({
   children,
@@ -11,15 +8,27 @@ export default function ShowMoreLess({
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [height, setHeight] = useState(maxHeight);
+  const [isShowButton, setShowButton] = useState(false);
   const contentRef = useRef(null);
 
+  const toggleButton = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   useEffect(() => {
-    if (isExpanded) {
-      setHeight(contentRef.current.scrollHeight);
-    } else {
-      setHeight(maxHeight);
+    if (contentRef.current) {
+      const contentHeight = contentRef.current.scrollHeight;
+      // set state show button
+      setShowButton(contentHeight > maxHeight);
+
+      // Adjusting height content
+      if (isExpanded) {
+        setHeight(contentRef.current.scrollHeight);
+      } else {
+        setHeight(maxHeight);
+      }
     }
-  }, [isExpanded, maxHeight]);
+  }, [isExpanded, children, maxHeight]);
 
   return (
     <div className="relative">
@@ -29,31 +38,34 @@ export default function ShowMoreLess({
         className="overflow-hidden"
       >
         {/* gradient overlay */}
-        {!isExpanded && gradient && (
+        {!isExpanded && gradient && isShowButton && (
           <div className="pointer-events-none absolute rounded-md bottom-8 left-0 right-0 h-20 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
         )}
         {children}
       </div>
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="mt-2 inline-flex items-center text-orange-400 hover:text-orange-300 font-semibold focus:outline-none"
-      >
-        {isExpanded ? (
-          <>
-            Show less
-            <span>
-              <IoIosArrowDropupCircle className="ml-2" />
-            </span>
-          </>
-        ) : (
-          <>
-            Show More
-            <span>
-              <IoIosArrowDropdownCircle className="ml-2" />
-            </span>
-          </>
-        )}
-      </button>
+
+      {isShowButton ? (
+        <button
+          onClick={toggleButton}
+          className="mt-2 inline-flex items-center text-orange-400 hover:text-orange-300 font-semibold focus:outline-none cursor-pointer"
+        >
+          {isExpanded ? (
+            <>
+              Show less
+              <span>
+                <FaArrowAltCircleUp className="ml-2" />
+              </span>
+            </>
+          ) : (
+            <>
+              Show More
+              <span>
+                <FaArrowAltCircleDown className="ml-2" />
+              </span>
+            </>
+          )}
+        </button>
+      ) : null}
     </div>
   );
 }

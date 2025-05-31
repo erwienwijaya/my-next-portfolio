@@ -185,7 +185,7 @@ export default function Intro() {
             flex items-center justify-center
             "
         >
-          <div className="grid grid-row bg-black/50">
+          <div className="grid grid-row">
             <Profile />
             <div className="absolute bottom-26 right-3 z-30">
               <BounceButton

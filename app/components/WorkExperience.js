@@ -1,4 +1,4 @@
-import { CollapseExpanded } from "../components";
+import { ShowMoreLess } from "../components";
 
 export default function WorkExperience() {
   return (
@@ -12,10 +12,10 @@ export default function WorkExperience() {
           <div className="font-semibold">Indonesian</div>
           <div>April 2024 - May 2024</div>
           <div className="text-blue-400 font-semibold mt-4">Description:</div>
-          <CollapseExpanded gradient={true} limit={300}>
+          <ShowMoreLess gradient={true} maxHeight={100}>
             Provide theoretical and practical training for the utilization of
             Docker in courses Analysis of Design and Information Systems.
-          </CollapseExpanded>
+          </ShowMoreLess>
         </li>
         <li className="mb-6">
           <div className="font-semibold text-orange-300">Full Stack Data</div>
