@@ -10,3 +10,8 @@ export { default as ProfilePicture } from "./ProfilePicture";
 export { default as StackRow } from "./StackRow";
 export { default as WorkExperience } from "./WorkExperience";
 export { default as ShowMoreLess } from "./ShowMoreLess";
+export { default as Header } from "./Header";
+export { default as AboutMe } from "./AboutMe";
+export { default as Skills } from "./Skills";
+export { default as Projects } from "./Projects";
+export { default as Contact } from "./Contact";

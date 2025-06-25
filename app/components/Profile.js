@@ -1,13 +1,16 @@
 import { FaCloudDownloadAlt } from "react-icons/fa";
-import { AiFillAppstore } from "react-icons/ai";
-import { HiBuildingOffice2 } from "react-icons/hi2";
+// import { AiFillAppstore } from "react-icons/ai";
+// import { HiBuildingOffice2 } from "react-icons/hi2";
 import {
   ScrollSwipeDetection,
   BounceButton,
-  StackRow,
-  WorkExperience,
-  ShowMoreLess,
+  ProfilePicture,
+  // StackRow,
+  // WorkExperience,
+  // ShowMoreLess,
 } from "../components";
+
+import { profile_header } from "../data";
 
 export default function Profile() {
   const HandleDownload = () => {
@@ -29,7 +32,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="font-[family-name:var(--font-poppins-sans)] font-semibold text-gray-300 text-center flex flex-row items-center justify-center">
+    <div className="font-semibold text-gray-300 text-center flex flex-row items-center justify-center">
       <div className="md:text-left text-center">
         <div
           className="text-justify font-medium md:text-lg text-base grid grid-row"
@@ -40,62 +43,35 @@ export default function Profile() {
             showCursor={false}
             className={"custom-height w-screen mb-4"}
           >
-            <div className="relative md:mx-10 mx-8 flex flex-col">
-              <div className="font-[family-name:var(--font-russo-one)] md:text-3xl text-lg mt-8 md:mx-40 mx-6 text-center font-bold text-gray-300">
-                With expertise in{" "}
-                <span className="text-orange-300">
-                  Web Development & Data Science
-                </span>
-                , I blend cutting-edge technology with data-driven insights to
-                deliver innovative solutions that make a real impact.
-              </div>
-              <div className="flex items-center justify-center md:mt-8 mt-6 md:mb-14 mb-10">
-                <BounceButton
-                  onClick={HandleDownload}
-                  className={`md:w-60 w-56 md:text-lg text-base font-semibold border-0 bg-orange-400 hover:text-gray-200 text-gray-100 hover:bg-orange-500`}
-                >
-                  <FaCloudDownloadAlt className="mr-2" />
-                  Curriculum Vitae
-                </BounceButton>
+            <div className="flex flex-row">
+              {/* left side */}
+              <div className="relative md:mx-8 mx-6 flex flex-col">
+                <div className="font-[family-name:var(--font-russo-one-sans)] md:text-6xl text-xl mt-8 md:mx-30 mx-6 text-left font-bold text-gray-600">
+                  <div
+                    dangerouslySetInnerHTML={{ __html: profile_header.tagline }}
+                  />
+                </div>
+                <div className="flex items-center justify-start md:mt-8 mt-6 md:mb-14 mb-10 md:mx-30 mx-6">
+                  <BounceButton
+                    onClick={HandleDownload}
+                    className={`md:w-60 w-56 md:text-lg text-base font-semibold border-0 bg-cyan-700/70 hover:text-cyan-600 text-gray-100 hover:bg-gray-100`}
+                  >
+                    <FaCloudDownloadAlt className="mr-2" />
+                    Curriculum Vitae
+                  </BounceButton>
+                </div>
               </div>
 
-              {/* Stack: Summary */}
-              <StackRow
-                icon={<AiFillAppstore className="mr-2" />}
-                title={"Summary"}
-                classHeader={`md:mx-40 mx-6`}
-                classDescription={`flex items-center font-bold md:text-2xl text-lg`}
-                classLine={`border-t-1 border-orange-400 rounded shadow-md shadow-gray-200 mb-4`}
-              >
-                <div className="text-justify md:text-lg text-base">
-                  <ShowMoreLess gradient={true} maxHeight={100}>
-                    With over 20 years of experience in the information
-                    technology and education sectors, I am highly motivated to
-                    continuously learn and grow. I excel at communicating
-                    effectively across all organizational levels, from
-                    operational staff to executive leadership (C-Level). My
-                    expertise includes fostering strong teamwork, skillfully
-                    organizing and coordinating multiple teams in a synergistic
-                    manner, and demonstrating resilience when tackling
-                    challenges beyond my core specialization. I thrive on deep
-                    analytical thinking to develop innovative and strategic
-                    solutions that drive success.
-                  </ShowMoreLess>
-                </div>
-              </StackRow>
-
-              {/* Stack: Working Experience */}
-              <StackRow
-                icon={<HiBuildingOffice2 className="mr-2" />}
-                title={"Work Experience"}
-                classHeader={`md:mx-40 mx-6 md:mt-10 mt-6`}
-                classDescription={`flex items-center font-bold md:text-2xl text-lg`}
-                classLine={`border-t-1 border-orange-400 rounded shadow-md shadow-gray-200 mb-4`}
-              >
-                <div className="text-justify">
-                  <WorkExperience />
-                </div>
-              </StackRow>
+              {/* right side */}
+              <div className="relative my-1 rounded-2xl overflow-hidden md:mx-8 mx-6 items-center justify-center md:mr-30">
+                {/* <ProfilePicture
+                  src={"/images/LJOI8630.png"}
+                  alt={"Photo of Profile"}
+                  width={860}
+                  height={640}
+                  className={`rounded-2xl transition-transform`}
+                /> */}
+              </div>
             </div>
           </ScrollSwipeDetection>
         </div>

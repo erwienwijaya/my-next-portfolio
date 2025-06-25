@@ -82,8 +82,8 @@ export default function ScrollDetection({
     >
       {smartScroll && isScrollActive && !isScrolling ? (
         <div className="absolute inset-0 z-20 pointer-events-none flex flex-col items-center justify-center animate-bounce">
-          <MdOutlineSwipeVertical className="text-9xl text-gray-300" />
-          <span className="mt-2 text-gray-300 font-bold text-xl">
+          <MdOutlineSwipeVertical className="text-9xl text-gray-700" />
+          <span className="mt-2 text-gray-700 font-bold text-xl">
             Scroll Up / Down
           </span>
         </div>
@@ -91,7 +91,7 @@ export default function ScrollDetection({
       <div
         className={`relative z-10 ${
           smartScroll && isScrollActive && !isScrolling
-            ? "text-gray-800/50 cursor-pointer"
+            ? "text-gray-400/50 cursor-pointer"
             : "transition-colors duration-300 ease-in-out delay-300"
         } `}
       >

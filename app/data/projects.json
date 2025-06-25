@@ -1,0 +1,50 @@
+[
+  {
+    "title": "E-Commerce Dashboard",
+    "description": "A comprehensive admin dashboard for e-commerce management with real-time analytics, inventory tracking, and customer management.",
+    "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "title": "Task Management App",
+    "description": "A collaborative task management application with team workspaces, real-time updates, and project timeline visualization.",
+    "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React", "Node.js", "MongoDB", "Socket.io"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "title": "Weather App",
+    "description": "A beautiful weather application with location-based forecasts, interactive maps, and personalized weather insights.",
+    "image": "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React", "Weather API", "Geolocation", "CSS3"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio website showcasing creative work with smooth animations and optimized performance.",
+    "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React", "Tailwind CSS", "Framer Motion", "Netlify"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "title": "Social Media App",
+    "description": "A social networking platform with real-time messaging, photo sharing, and advanced privacy controls.",
+    "image": "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React Native", "Firebase", "Redux", "Push Notifications"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "title": "Banking App UI",
+    "description": "A secure and intuitive banking application interface with biometric authentication and transaction management.",
+    "image": "https://images.pexels.com/photos/210600/pexels-photo-210600.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "tags": ["React", "Material-UI", "Security", "Responsive Design"],
+    "demoUrl": "#",
+    "githubUrl": "#"
+  }
+]

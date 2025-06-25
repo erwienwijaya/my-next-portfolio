@@ -2,36 +2,38 @@
   /* get more icons in https://react-icons.github.io/react-icons/  */
 }
 
-import {
-  FaLinkedin,
-  FaGithubAlt,
-  FaDiscord,
-  FaInstagram,
-} from "react-icons/fa";
+import { FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
+import { MdOutlineMail, MdOutlineWhatsapp } from "react-icons/md";
 import LinkButton from "./LinkButton";
 
-export default function SocialLinks() {
+export default function SocialLinks({ className }) {
   const links = [
     {
       url: "https://www.linkedin.com/in/erwien-tjipta-wijaya-79057428/",
-      label: <FaLinkedin className="hover:text-white" />,
+      label: <FiLinkedin className={`${className}`} />,
     },
     {
       url: "https://github.com/erwienwijaya",
-      label: <FaGithubAlt className="hover:text-white" />,
+      label: <FiGithub className={`${className}`} />,
     },
     {
       url: "",
-      label: <FaDiscord className="hover:text-white" />,
+      label: <FiInstagram className={`${className}`} />,
     },
     {
       url: "",
-      label: <FaInstagram className="hover:text-white" />,
+      label: <MdOutlineWhatsapp className={`${className}`} />,
+    },
+    {
+      url: "",
+      label: <MdOutlineMail className={`${className}`} />,
     },
   ];
 
   return (
-    <div className="flex flex-row justify-center items-center space-x-6 text-2xl text-orange-400">
+    <div
+      className={`flex flex-row justify-center items-start space-x-6 text-2xl ${className}`}
+    >
       {links.map(({ url, label }, index) => (
         <LinkButton key={index} url={url} newTab={true} label={label} />
       ))}
