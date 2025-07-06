@@ -4,6 +4,7 @@ import { MdOutlineSwipeVertical } from "react-icons/md";
 export default function ScrollDetection({
   children,
   className,
+  setHeight,
   showCursor = false,
   smartScroll = true,
 }) {
@@ -89,7 +90,7 @@ export default function ScrollDetection({
         </div>
       ) : null}
       <div
-        className={`relative z-10 ${
+        className={`relative z-10 h-${setHeight} ${
           smartScroll && isScrollActive && !isScrolling
             ? "text-gray-400/50 cursor-pointer"
             : "transition-colors duration-300 ease-in-out delay-300"

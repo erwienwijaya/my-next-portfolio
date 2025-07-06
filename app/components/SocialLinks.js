@@ -3,7 +3,6 @@
 }
 
 import { FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
-import { MdOutlineMail, MdOutlineWhatsapp } from "react-icons/md";
 import LinkButton from "./LinkButton";
 
 export default function SocialLinks({ className }) {
@@ -19,14 +18,6 @@ export default function SocialLinks({ className }) {
     {
       url: "",
       label: <FiInstagram className={`${className}`} />,
-    },
-    {
-      url: "",
-      label: <MdOutlineWhatsapp className={`${className}`} />,
-    },
-    {
-      url: "",
-      label: <MdOutlineMail className={`${className}`} />,
     },
   ];
 

@@ -1,0 +1,36 @@
+{
+  "id": 1,
+  "title": "My <span class=\"bg-gradient-to-r from-blue-400 to-cyan-200 bg-clip-text text-transparent\">Skills</span>",
+  "tagline": "From Concept to Code – Skilled for Impact",
+  "categories": [
+    {
+      "title": "Frontend",
+      "icon": "LuCode",
+      "skills": [
+        { "name": "React", "level": 70 },
+        { "name": "TypeScript", "level": 70 },
+        { "name": "Tailwind CSS", "level": 80 },
+        { "name": "JavaScript", "level": 80 }
+      ]
+    },
+    {
+      "title": "Backend",
+      "icon": "LuServer",
+      "skills": [
+        { "name": "Python", "level": 90 },
+        { "name": "PHP", "level": 80 },
+        { "name": "Node.js", "level": 70 }
+      ]
+    },
+    {
+      "title": "Tools",
+      "icon": "LuGlobe",
+      "skills": [
+        { "name": "Git/GitHub", "level": 85 },
+        { "name": "Docker", "level": 75 },
+        { "name": "Tableau", "level": 70 },
+        { "name": "REST APIs", "level": 80 }
+      ]
+    }
+  ]
+}

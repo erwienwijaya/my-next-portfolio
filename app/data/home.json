@@ -1,6 +1,14 @@
 {
   "id": 1,
-  "photo": "/images/profile.png",
+  "photo": "/images/travel.jpg",
   "my_name": "Erwien Wijaya",
-  "describe": "<span class=\"text-cyan-600 font-semibold\">Full-stack Data Professional</span> and <span class=\"text-cyan-600 font-semibold\">Full-stack Web Developer</span> crafting digital experiences that delight users and drive business growth"
+  "describe": "<span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">Full-stack Data Professional</span> and <span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">Full-stack Web Developer</span> crafting digital experiences that delight users and drive business growth",
+  "roles": [
+    "Fullstack Data Professional",
+    "Fullstack Web Developer",
+    "Lecture"
+  ],
+  "email": "erwien.wijaya10@gmail.com",
+  "phone": "+62 81-333-175-881",
+  "location": "Jakarta, Indonesia"
 }

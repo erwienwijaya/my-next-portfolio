@@ -1,0 +1,55 @@
+{
+  "id": 1,
+  "title": "Featured <span class=\"bg-gradient-to-r from-slate-700 via-blue-700 to-purple-500 bg-clip-text text-transparent\">Projects</span>",
+  "tagline": "A showcase of my recent work, from concept to completion",
+  "my_works": [
+    {
+      "title": "Flask Gemini RabbitMQ",
+      "description": "This project is a simple example of integrating Flask, RabbitMQ, and Large Language Models (LLM) like Gemini into a Python microservice.",
+      "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["Python", "Flask", "RabbitMQ", "Redis", "Gemini", "Docker"],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/erwienwijaya/flask-rabbitmq"
+    },
+    {
+      "title": "Library Management",
+      "description": "This project is a Library Management System built with Python, Flask and MariaDB. The project follows SOLID principles to ensure maintainability and scalability.",
+      "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["Python", "Flask", "MariaDB"],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/erwienwijaya/library-management"
+    },
+    {
+      "title": "Simple Parking Booking API",
+      "description": "A beautiful weather application with location-based forecasts, interactive maps, and personalized weather insights.",
+      "image": "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["PHP", "Laravel", "PostgreSQL", "Nginx", "Docker"],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/erwienwijaya/simple-parking-booking"
+    },
+    {
+      "title": "Management Users API",
+      "description": "A modern, responsive portfolio website showcasing creative work with smooth animations and optimized performance.",
+      "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["Python", "Django", "SQLLite"],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/erwienwijaya/management-user-rest-api"
+    },
+    {
+      "title": "Node Users Rest API",
+      "description": "A social networking platform with real-time messaging, photo sharing, and advanced privacy controls.",
+      "image": "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["NPM", "Node.Js", "Express.js"],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/erwienwijaya/node-express-api"
+    },
+    {
+      "title": "Portfolio React",
+      "description": "A secure and intuitive banking application interface with biometric authentication and transaction management.",
+      "image": "https://images.pexels.com/photos/210600/pexels-photo-210600.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "tags": ["React", "Next.Js"],
+      "demoUrl": "#",
+      "githubUrl": "#"
+    }
+  ]
+}

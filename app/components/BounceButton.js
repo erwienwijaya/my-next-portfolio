@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 
-export default function BounceButton({ onClick, children, icon, className }) {
+export default function BounceButton({
+  onClick,
+  children,
+  icon,
+  className,
+  animateType = "none",
+}) {
   const [isBouncing, setIsBouncing] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+  const animateClass = animateType === "none" ? "" : `animate-${animateType}`;
 
   const handleClick = () => {
     setIsBouncing(true);
@@ -19,6 +27,8 @@ export default function BounceButton({ onClick, children, icon, className }) {
 
   return (
     <button
+      onMouseLeave={() => setIsHover(false)}
+      onMouseEnter={() => setIsHover(true)}
       onClick={() => {
         handleClick();
         if (onClick) onClick();
@@ -30,7 +40,7 @@ export default function BounceButton({ onClick, children, icon, className }) {
       }`}
     >
       <div className="flex flex-row justify-center items-center">
-        {icon}
+        <span className={isHover ? animateClass : ""}>{icon}</span>
         {children}
       </div>
     </button>

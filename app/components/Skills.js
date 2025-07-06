@@ -14,7 +14,7 @@ import {
   SiTableau,
   SiLangchain,
 } from "react-icons/si";
-import { skill_categories } from "../data";
+import { skill } from "../data";
 
 export default function Skills({ setIsInSkillSection }) {
   const skillRef = useRef(null);
@@ -46,7 +46,7 @@ export default function Skills({ setIsInSkillSection }) {
     };
   }, [setIsInSkillSection]);
 
-  const skillCategories = skill_categories;
+  const { title, tagline, categories } = skill;
 
   const tools = [
     { name: "Python", icon: <SiPython className="w-12 h-12" /> },
@@ -66,21 +66,29 @@ export default function Skills({ setIsInSkillSection }) {
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-r from-cyan-600 via-cyan-700 to-gray-200 min-h-screen"
+      className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-100 min-h-screen"
       ref={skillRef}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-luckies-sans)] text-3xl sm:text-4xl font-semibold text-gray-100 mb-4">
-            My <span className="text-gray-800">Skills</span>
+          <h2 className="text-3xl sm:text-4xl font-semibold bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: title,
+              }}
+            />
           </h2>
-          <p className="font-[family-name:var(--font-luckies-sans)] text-gray-200 max-w-2xl mx-auto md:text-lg text-base leading-relaxed font-medium">
-            From Concept to Code – Skilled for Impact
-          </p>
+          <div className="text-gray-200 max-w-2xl mx-auto md:text-2xl text-lg leading-relaxed font-medium">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: tagline,
+              }}
+            />
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {skillCategories.map((category, index) => {
+          {categories.map((category, index) => {
             const iconMap = {
               LuCode: LuCode,
               LuServer: LuServer,
@@ -92,13 +100,13 @@ export default function Skills({ setIsInSkillSection }) {
             return (
               <div
                 key={index}
-                className="bg-gray-200 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300"
               >
                 <div className="flex items-center mb-6">
-                  <div className="text-cyan-600 p-3 rounded-lg mr-4">
+                  <div className="text-yellow-400 p-3 rounded-lg mr-4">
                     <Icons className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-500">
+                  <h3 className="text-xl font-bold text-white">
                     {category.title}
                   </h3>
                 </div>
@@ -107,16 +115,16 @@ export default function Skills({ setIsInSkillSection }) {
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-gray-700 font-medium">
+                        <span className="text-white font-medium">
                           {skill.name}
                         </span>
-                        <span className="text-gray-500 text-sm">
+                        <span className="text-white text-sm font-medium">
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="bg-gray-300 rounded-full h-2">
+                      <div className="bg-white rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-cyan-400 to-sky-900 h-2 rounded-full transition-all duration-1000 ease-out"
+                          className="bg-gradient-to-br from-blue-300  to-purple-700 h-2 rounded-full transition-all duration-1000 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
@@ -129,19 +137,17 @@ export default function Skills({ setIsInSkillSection }) {
         </div>
 
         <div className="text-center">
-          <h3 className="font-[family-name:var(--font-luckies-sans)] text-2xl font-medium text-gray-200 mb-8">
+          <h3 className="md:text-2xl text-xl font-medium text-white mb-8">
             Tools & Technologies
           </h3>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
             {tools.map((tool, index) => (
               <div key={index} className="group">
-                <div className="bg-gray-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <div className="text-gray-600 group-hover:text-cyan-500 transition-colors duration-200 flex justify-center mb-3">
+                <div className="bg-gray-600/30 backdrop-blur-md rounded-2xl border border-white/20 p-6 hover:shadow-2xl hover:from-blue-50 hover:to-purple-50 hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2">
+                  <div className=" text-white group-hover:text-yellow-400 transition-colors duration-200 flex justify-center mb-3">
                     {tool.icon}
                   </div>
-                  <p className="text-sm font-medium text-gray-700">
-                    {tool.name}
-                  </p>
+                  <p className="text-sm font-medium text-white">{tool.name}</p>
                 </div>
               </div>
             ))}

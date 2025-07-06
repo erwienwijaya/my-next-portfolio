@@ -1,35 +1,44 @@
-// import { SocialLinks, LinkButton } from "../components";
 import { LuGithub } from "react-icons/lu";
 import { LinkButton } from "../components";
+import { home } from "../data";
 
-export default function Footer({ className_icons, className_parent }) {
+export default function Footer() {
+  const text = home.my_name;
+  const full_name = text.split(" ");
+
   return (
-    <footer className="bg-cyan-800 text-white py-12">
+    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-purple-300 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="mb-6">
             <h3 className="font-[family-name:var(--font-luckies-sans)] text-2xl font-medium mb-2">
-              <span className="text-cyan-400">Erwien</span> Wijaya
+              <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
+                {full_name[0]}
+              </span>{" "}
+              {full_name[1]}
             </h3>
-            <p className="text-gray-300">
-              Fullstack Data Professional - Fullstack Web Developer
+            <p className="text-white">
+              {home.roles.map((role, index) => (
+                <span key={index}>
+                  {role}
+                  {index < home.roles.length - 1 ? " - " : ""}
+                </span>
+              ))}
             </p>
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
-            <p className="text-gray-300 flex items-center justify-center space-x-2">
+          <div className="border-t border-gray-300 pt-8">
+            <div className="text-white flex items-center justify-center space-x-0.5">
               <span>
                 <LinkButton
                   url="https://github.com/erwienwijaya"
                   newTab={true}
-                  label="@ 2025 Developed on My-own / 自分で開発した"
+                  label="&copy; 2025 Developed on My-own"
+                  tooltip="Source My Portfolio"
                 />
               </span>
               <LuGithub size={16} className="text-gray-300 fill-current" />
-              {/* <span>© 2025 Alex Morgan. Made with</span>
-              <LuHeart size={16} className="text-red-500 fill-current" />
-              <span>and lots of coffee</span> */}
-            </p>
+            </div>
           </div>
         </div>
       </div>

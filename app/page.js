@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Intro,
   Header,
@@ -9,9 +9,18 @@ import {
   Projects,
   Contact,
   Footer,
+  HomeButton,
+  ScrollSwipeDetection,
+  ProfilePicture,
 } from "./components";
+import useCurrentSection from "./hooks/useCurrentSection";
 
-export default function Home() {
+import { LuAward, LuUser, LuCoffee, LuZap } from "react-icons/lu";
+// import { ScrollSwipeDetection, ProfilePicture } from "../components";
+import { about_me, home } from "./data";
+
+export default function Page() {
+  // setting background image based on screen size
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,8 +39,42 @@ export default function Home() {
   const bgChange = isMobile ? "/images/bg-small.jpg" : "/images/bg-wide.jpg";
   const [isInSkillSection, setIsInSkillSection] = useState(false);
 
+  // const sectionIds = ["home", "about", "skills", "projects", "contact"];
+  // const currentSection = useCurrentSection(sectionIds);
+  const sectionIds = React.useMemo(
+    () => ["home", "about", "skills", "projects", "contact"],
+    []
+  );
+
+  const currentSection = useCurrentSection(sectionIds);
+
+  const { title, tagline, role, description } = about_me;
+
+  const stats = [
+    {
+      icon: <LuAward className="w-8 h-8" />,
+      value: "10+",
+      label: "Projects Completed",
+    },
+    {
+      icon: <LuUser className="w-8 h-8" />,
+      value: "8+",
+      label: "Happy Clients",
+    },
+    {
+      icon: <LuCoffee className="w-8 h-8" />,
+      value: "50+",
+      label: "Cups of Coffee",
+    },
+    {
+      icon: <LuZap className="w-8 h-8" />,
+      value: "10+",
+      label: "Years Experience",
+    },
+  ];
+
   return (
-    <div className="">
+    <div>
       <Header isInSkillSection={isInSkillSection} />
       <main className="relative h-screen">
         <div
@@ -47,6 +90,14 @@ export default function Home() {
           <Projects />
           <Contact />
           <Footer />
+
+          {/* Home Button Component :
+          if the button didn't appear, please setting hooks/useCurrentSection.js
+          - threshold
+          - rootMargin  
+          */}
+
+          <HomeButton currentSection={currentSection} />
         </div>
       </main>
     </div>
