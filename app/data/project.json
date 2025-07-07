@@ -1,53 +1,53 @@
 {
   "id": 1,
   "title": "Featured <span class=\"bg-gradient-to-r from-slate-700 via-blue-700 to-purple-500 bg-clip-text text-transparent\">Projects</span>",
-  "tagline": "A showcase of my recent work, from concept to completion",
+  "tagline": "Portfolio of Passion, Precision, and Progress",
   "my_works": [
     {
-      "title": "Flask Gemini RabbitMQ",
-      "description": "This project is a simple example of integrating Flask, RabbitMQ, and Large Language Models (LLM) like Gemini into a Python microservice.",
+      "title": "TaskMaster Pro",
+      "description": "An intuitive task management app designed to boost productivity by organizing your daily to-dos, deadlines, and priorities with smart notifications and progress tracking.",
       "image": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["Python", "Flask", "RabbitMQ", "Redis", "Gemini", "Docker"],
+      "tags": ["Python", "Django", "RabbitMQ", "Redis"],
       "demoUrl": "#",
-      "githubUrl": "https://github.com/erwienwijaya/flask-rabbitmq"
+      "githubUrl": "#"
     },
     {
-      "title": "Library Management",
-      "description": "This project is a Library Management System built with Python, Flask and MariaDB. The project follows SOLID principles to ensure maintainability and scalability.",
+      "title": "FitTrack Buddy",
+      "description": "A comprehensive fitness companion app that tracks workouts, monitors health metrics, and provides personalized exercise plans to help you achieve your fitness goals.",
       "image": "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["Python", "Flask", "MariaDB"],
+      "tags": ["Flutter", "Go", "PostgreSQL"],
       "demoUrl": "#",
-      "githubUrl": "https://github.com/erwienwijaya/library-management"
+      "githubUrl": "#"
     },
     {
-      "title": "Simple Parking Booking API",
-      "description": "A beautiful weather application with location-based forecasts, interactive maps, and personalized weather insights.",
+      "title": "TravelMate Explorer",
+      "description": "An all-in-one travel planner that helps users discover destinations, create itineraries, manage bookings, and share travel experiences with a community of explorers.",
       "image": "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["PHP", "Laravel", "PostgreSQL", "Nginx", "Docker"],
+      "tags": ["PHP", "Laravel", "PostgreSQL", "Nginx"],
       "demoUrl": "#",
-      "githubUrl": "https://github.com/erwienwijaya/simple-parking-booking"
+      "githubUrl": "#"
     },
     {
-      "title": "Management Users API",
-      "description": "A modern, responsive portfolio website showcasing creative work with smooth animations and optimized performance.",
+      "title": "ArtSpace Gallery",
+      "description": "A digital portfolio platform for artists to showcase their work, connect with potential clients, and participate in virtual exhibitions with integrated e-commerce capabilities.",
       "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["Python", "Django", "SQLLite"],
+      "tags": ["React", "React Native", "Nest.Js", "MariaDB"],
       "demoUrl": "#",
-      "githubUrl": "https://github.com/erwienwijaya/management-user-rest-api"
+      "githubUrl": "#"
     },
     {
-      "title": "Node Users Rest API",
-      "description": "A social networking platform with real-time messaging, photo sharing, and advanced privacy controls.",
+      "title": "MindCalm",
+      "description": "A mental wellness app featuring guided meditation, breathing exercises, and daily mindfulness challenges to reduce stress and improve emotional balance.",
       "image": "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["NPM", "Node.Js", "Express.js"],
+      "tags": ["Next.Js", "Node.Js", "Express.js"],
       "demoUrl": "#",
-      "githubUrl": "https://github.com/erwienwijaya/node-express-api"
+      "githubUrl": "#"
     },
     {
-      "title": "Portfolio React",
-      "description": "A secure and intuitive banking application interface with biometric authentication and transaction management.",
+      "title": "BudgetWise",
+      "description": "A personal finance app that simplifies budgeting by categorizing expenses, setting savings goals, and generating insightful reports to improve your financial health.",
       "image": "https://images.pexels.com/photos/210600/pexels-photo-210600.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "tags": ["React", "Next.Js"],
+      "tags": ["Go", "React Native", "Apache Kafka", "MongoDB"],
       "demoUrl": "#",
       "githubUrl": "#"
     }

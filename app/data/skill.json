@@ -1,14 +1,14 @@
 {
   "id": 1,
   "title": "My <span class=\"bg-gradient-to-r from-blue-400 to-cyan-200 bg-clip-text text-transparent\">Skills</span>",
-  "tagline": "From Concept to Code – Skilled for Impact",
+  "tagline": "Coding, Creating, Innovating — My Skillset Unleashed",
   "categories": [
     {
       "title": "Frontend",
       "icon": "LuCode",
       "skills": [
-        { "name": "React", "level": 70 },
-        { "name": "TypeScript", "level": 70 },
+        { "name": "React", "level": 90 },
+        { "name": "TypeScript", "level": 90 },
         { "name": "Tailwind CSS", "level": 80 },
         { "name": "JavaScript", "level": 80 }
       ]
@@ -19,7 +19,8 @@
       "skills": [
         { "name": "Python", "level": 90 },
         { "name": "PHP", "level": 80 },
-        { "name": "Node.js", "level": 70 }
+        { "name": "Node.js", "level": 90 },
+        { "name": "Golang", "level": 70 }
       ]
     },
     {
@@ -27,9 +28,9 @@
       "icon": "LuGlobe",
       "skills": [
         { "name": "Git/GitHub", "level": 85 },
-        { "name": "Docker", "level": 75 },
-        { "name": "Tableau", "level": 70 },
-        { "name": "REST APIs", "level": 80 }
+        { "name": "Hadoop", "level": 75 },
+        { "name": "Power BI", "level": 7 },
+        { "name": "REST APIs", "level": 90 }
       ]
     }
   ]

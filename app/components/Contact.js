@@ -7,11 +7,18 @@ import {
   LuGithub,
   LuLinkedin,
   LuTwitter,
+  LuInstagram,
 } from "react-icons/lu";
-
-import { BounceButton } from "../components";
+import { BounceButton, LinkButton } from "../components";
+import { home, social_links } from "../data";
 
 export default function Contact() {
+  const { my_name, email, phone, location } = home;
+  const full_name = my_name.split(" ");
+
+  const formatPhoneNumber = (phone) =>
+    phone.replace(/[^0-9+]/g, "").replace(/^\+62/, "62");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,40 +40,44 @@ export default function Contact() {
     console.log("Form submitted:", formData);
   };
 
-  const message = "Hi, Erwien\nI’d like to get in touch with you";
+  const message = `Hi, ${full_name[0]}\nI’d like to get in touch with you`;
   const contactInfo = [
     {
       icon: <LuMail className="w-6 h-6" />,
       title: "Email",
-      content: "erwien.growind@gmail.com",
-      link: "mailto:erwien.growind@gmail.com",
+      content: `${email}`,
+      link: `mailto:${email}`,
     },
     {
       icon: <LuPhone className="w-6 h-6" />,
       title: "Phone",
-      content: "+62 81-333-175-881",
-      link: `https://wa.me/6281333175881?text=${encodeURIComponent(message)}`,
+      content: `${phone}`,
+      link: `https://wa.me/$${formatPhoneNumber(
+        phone
+      )}?text=${encodeURIComponent(message)}`,
     },
     {
       icon: <LuMapPin className="w-6 h-6" />,
       title: "Location",
-      content: "Jakarta, Indonesia",
+      content: `${location}`,
       link: "https://maps.app.goo.gl/2UpnTSWGGA6nDTzW7",
     },
   ];
 
-  const socialLinks = [
+  const socialLinks = social_links;
+  const socialIcons = [
     {
       icon: <LuGithub className="w-6 h-6" />,
-      url: "https://github.com/erwienwijaya",
-      label: "GitHub",
     },
     {
       icon: <LuLinkedin className="w-6 h-6" />,
-      url: "https://www.linkedin.com/in/erwien-tjipta-wijaya-79057428/",
-      label: "LinkedIn",
     },
-    { icon: <LuTwitter className="w-6 h-6" />, url: "#", label: "Twitter" },
+    {
+      icon: <LuTwitter className="w-6 h-6" />,
+    },
+    {
+      icon: <LuInstagram className="w-6 h-6" />,
+    },
   ];
 
   return (
@@ -117,14 +128,14 @@ export default function Contact() {
               <h4 className="font-medium text-cyan-800 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
-                  <a
+                  <LinkButton
                     key={index}
-                    href={social.url}
-                    aria-label={social.label}
-                    className="bg-white text-cyan-800 p-3 rounded-lg shadow-sm hover:bg-blue-300 hover:text-white transition-all duration-200 transform hover:scale-105"
-                  >
-                    {social.icon}
-                  </a>
+                    url={social.url}
+                    newTab={true}
+                    label={socialIcons[index]["icon"]}
+                    tooltip={social.label}
+                    className="bg-white text-cyan-800 p-3 flex items-center justify-center w-12 h-12 rounded-lg shadow-sm hover:bg-blue-300 hover:text-white transition-all duration-200 transform hover:scale-105"
+                  />
                 ))}
               </div>
             </div>
@@ -204,14 +215,6 @@ export default function Contact() {
                   required
                 ></textarea>
               </div>
-
-              {/* <button
-                type="submit"
-                className="w-full text-white px-6 py-3 rounded-lg font-medium bg-gradient-to-br from-slate-800 via-blue-800 to-purple-400 border-cyan-600 transition-colors duration-200 transform hover:shadow-xl hover:scale-105"
-              >
-                <span>Send Message</span>
-                <LuSend size={18} />
-              </button> */}
 
               <BounceButton
                 icon={<LuSend size={18} className="mr-2" />}

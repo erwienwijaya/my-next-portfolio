@@ -1,14 +1,14 @@
 {
   "id": 1,
   "photo": "/images/travel.jpg",
-  "my_name": "Erwien Wijaya",
-  "describe": "<span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">Full-stack Data Professional</span> and <span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">Full-stack Web Developer</span> crafting digital experiences that delight users and drive business growth",
+  "my_name": "Putra Bangsa",
+  "describe": "<span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">AI Engineer</span> and <span class=\"bg-gradient-to-r from-cyan-700 via-blue-700 to-orange-700 bg-clip-text text-transparent font-semibold\">Web Developer</span> Where AI Meets Cutting-Edge Web Development",
   "roles": [
     "Fullstack Data Professional",
     "Fullstack Web Developer",
     "Lecture"
   ],
-  "email": "erwien.wijaya10@gmail.com",
-  "phone": "+62 81-333-175-881",
+  "email": "putra.bangsa@growth.id",
+  "phone": "+62 85-304-237-988",
   "location": "Jakarta, Indonesia"
 }

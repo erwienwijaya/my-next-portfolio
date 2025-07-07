@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { home, menus } from "../data";
 
@@ -12,7 +12,7 @@ export default function Header({ isInSkillSection }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = menus.map((items) => items.id);
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {

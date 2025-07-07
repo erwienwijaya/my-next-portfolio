@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="text-white flex items-center justify-center space-x-0.5">
               <span>
                 <LinkButton
-                  url="https://github.com/erwienwijaya"
+                  url="https://github.com/erwienwijaya/my-next-portfolio"
                   newTab={true}
                   label="&copy; 2025 Developed on My-own"
                   tooltip="Source My Portfolio"

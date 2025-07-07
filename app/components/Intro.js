@@ -10,9 +10,6 @@ import { useState, useEffect } from "react";
 export default function Intro() {
   const [isInvisible, setIsInvisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  // const [isHandleIntro, setIsHandleIntro] = useState(false);
-  // const [isHandleCallMe, setIsHandleCallMe] = useState(false);
-  // const [isHandleProfile, setIsHandleProfile] = useState(false);
 
   useEffect(() => {
     setIsAnimating(true);
@@ -47,6 +44,24 @@ export default function Intro() {
         projectSection.scrollIntoView({ behavior: "smooth" });
       }
     }, 300);
+  };
+
+  const HandleDownload = () => {
+    const name = "test";
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const year = now.getFullYear();
+    const newDate = `${month}${year}`;
+
+    const fileUrl = "/files/Lorem-Ipsum.pdf";
+    const fileName = `${name}-${newDate}`;
+
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -85,6 +100,7 @@ export default function Intro() {
           <div className="md:text-lg text-sm font-semibold text-gray-300 text-center flex md:flex-row flex-col my-6">
             <BounceButton
               icon={<MdDownload className="mr-2" />}
+              onClick={HandleDownload}
               animateType={"bounce"}
               className="w-64 text-white bg-gradient-to-br from-slate-800 via-blue-800 to-purple-400 border-cyan-600 transition-colors duration-200 transform hover:shadow-xl hover:scale-105 rounded-lg mb-2"
             >

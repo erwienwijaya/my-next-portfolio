@@ -9,22 +9,22 @@ export default function AboutMe() {
   const stats = [
     {
       icon: <LuAward className="w-8 h-8" />,
-      value: "10+",
+      value: "20+",
       label: "Projects Completed",
     },
     {
       icon: <LuUser className="w-8 h-8" />,
-      value: "8+",
+      value: "15+",
       label: "Happy Clients",
     },
     {
       icon: <LuCoffee className="w-8 h-8" />,
-      value: "50+",
+      value: "100+",
       label: "Cups of Coffee",
     },
     {
       icon: <LuZap className="w-8 h-8" />,
-      value: "10+",
+      value: "5+",
       label: "Years Experience",
     },
   ];
@@ -44,7 +44,7 @@ export default function AboutMe() {
             />
           </h2>
           <p
-            className="text-cyan-800 max-w-2xl mx-auto md:text-2xl text-lg leading-relaxed font-normal"
+            className="text-cyan-800 max-w-3xl mx-auto md:text-2xl text-lg leading-relaxed font-normal"
             dangerouslySetInnerHTML={{
               __html: tagline,
             }}

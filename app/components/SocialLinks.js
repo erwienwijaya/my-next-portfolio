@@ -2,31 +2,40 @@
   /* get more icons in https://react-icons.github.io/react-icons/  */
 }
 
-import { FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiTwitter, FiInstagram } from "react-icons/fi";
 import LinkButton from "./LinkButton";
+import { social_links } from "../data";
 
 export default function SocialLinks({ className }) {
-  const links = [
+  const socialIcons = [
     {
-      url: "https://www.linkedin.com/in/erwien-tjipta-wijaya-79057428/",
-      label: <FiLinkedin className={`${className}`} />,
+      icon: <FiGithub className={`${className}`} />,
     },
     {
-      url: "https://github.com/erwienwijaya",
-      label: <FiGithub className={`${className}`} />,
+      icon: <FiLinkedin className={`${className}`} />,
     },
     {
-      url: "",
-      label: <FiInstagram className={`${className}`} />,
+      icon: <FiTwitter className={`${className}`} />,
+    },
+    {
+      icon: <FiInstagram className={`${className}`} />,
     },
   ];
+
+  const links = social_links;
 
   return (
     <div
       className={`flex flex-row justify-center items-start space-x-6 text-2xl ${className}`}
     >
       {links.map(({ url, label }, index) => (
-        <LinkButton key={index} url={url} newTab={true} label={label} />
+        <LinkButton
+          key={index}
+          url={url}
+          newTab={true}
+          label={socialIcons[index]["icon"]}
+          tooltip={label}
+        />
       ))}
     </div>
   );

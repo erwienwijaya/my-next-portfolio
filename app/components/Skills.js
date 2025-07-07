@@ -1,18 +1,12 @@
 import { useRef, useEffect } from "react";
 import { LuCode, LuServer, LuGlobe } from "react-icons/lu";
 import {
-  SiFastapi,
-  SiDjango,
-  SiFlask,
-  SiLaravel,
-  SiNextdotjs,
   SiPython,
   SiPhp,
   SiReact,
-  SiDocker,
+  SiGo,
   SiGit,
-  SiTableau,
-  SiLangchain,
+  SiApachehadoop,
 } from "react-icons/si";
 import { skill } from "../data";
 
@@ -48,19 +42,25 @@ export default function Skills({ setIsInSkillSection }) {
 
   const { title, tagline, categories } = skill;
 
+  const categoryIcon = [
+    {
+      icon: <LuCode className="w-8 h-8" />,
+    },
+    {
+      icon: <LuServer className="w-8 h-8" />,
+    },
+    {
+      icon: <LuGlobe className="w-8 h-8" />,
+    },
+  ];
+
   const tools = [
     { name: "Python", icon: <SiPython className="w-12 h-12" /> },
     { name: "PHP", icon: <SiPhp className="w-12 h-12" /> },
     { name: "React", icon: <SiReact className="w-12 h-12" /> },
-    { name: "Docker", icon: <SiDocker className="w-12 h-12" /> },
+    { name: "Golang", icon: <SiGo className="w-12 h-12" /> },
     { name: "Git", icon: <SiGit className="w-12 h-12" /> },
-    { name: "Tableau", icon: <SiTableau className="w-12 h-12" /> },
-    { name: "FastAPI", icon: <SiFastapi className="w-12 h-12" /> },
-    { name: "Django", icon: <SiDjango className="w-12 h-12" /> },
-    { name: "Flask", icon: <SiFlask className="w-12 h-12" /> },
-    { name: "Laravel", icon: <SiLaravel className="w-12 h-12" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12" /> },
-    { name: "LangChain", icon: <SiLangchain className="w-12 h-12" /> },
+    { name: "Hadoop", icon: <SiApachehadoop className="w-12 h-12" /> },
   ];
 
   return (
@@ -89,14 +89,6 @@ export default function Skills({ setIsInSkillSection }) {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {categories.map((category, index) => {
-            const iconMap = {
-              LuCode: LuCode,
-              LuServer: LuServer,
-              LuGlobe: LuGlobe,
-            };
-
-            const Icons = iconMap[category.icon];
-
             return (
               <div
                 key={index}
@@ -104,7 +96,7 @@ export default function Skills({ setIsInSkillSection }) {
               >
                 <div className="flex items-center mb-6">
                   <div className="text-yellow-400 p-3 rounded-lg mr-4">
-                    <Icons className="w-8 h-8" />
+                    {categoryIcon[index]["icon"]}
                   </div>
                   <h3 className="text-xl font-bold text-white">
                     {category.title}
