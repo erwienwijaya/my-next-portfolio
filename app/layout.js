@@ -12,13 +12,11 @@ import "./globals.css";
 
 const poppins_sans = Poppins({
   variable: "--font-poppins-sans",
-  subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
 
 const luckies_guy_sans = Luckiest_Guy({
   variable: "--font-luckies-sans",
-  subsets: ["latin"],
   weight: ["400"],
 });
 
