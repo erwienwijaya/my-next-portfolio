@@ -52,7 +52,7 @@ export default function Contact() {
       icon: <LuPhone className="w-6 h-6" />,
       title: "Phone",
       content: `${phone}`,
-      link: `https://wa.me/$${formatPhoneNumber(
+      link: `https://wa.me/${formatPhoneNumber(
         phone
       )}?text=${encodeURIComponent(message)}`,
     },

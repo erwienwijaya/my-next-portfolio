@@ -26,7 +26,7 @@ export default function SocialLinks({ className }) {
 
   return (
     <div
-      className={`flex flex-row justify-center items-start space-x-6 text-2xl ${className}`}
+      className={`flex flex-row justify-center items-start space-x-6 text-2xl mt-6 ${className}`}
     >
       {links.map(({ url, label }, index) => (
         <LinkButton
