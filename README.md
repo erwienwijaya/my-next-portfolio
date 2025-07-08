@@ -53,10 +53,7 @@ If you are using Visual Studio Code, click "Add Configuration" in the launch.jso
 ## Demo Website
 
 if you want to see the preview of demo you can check it out:
-
-```bash
-https://my-next-portfolio-lou4.vercel.app/
-```
+<https://my-next-portfolio-lou4.vercel.app/>
 
 ## Deploy on Vercel
 
