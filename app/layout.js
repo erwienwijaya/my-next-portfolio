@@ -12,36 +12,43 @@ import "./globals.css";
 
 const poppins_sans = Poppins({
   variable: "--font-poppins-sans",
+  subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
 
 const luckies_guy_sans = Luckiest_Guy({
   variable: "--font-luckies-sans",
+  subsets: ["latin"],
   weight: ["400"],
 });
 
 const shantell_sans = Shantell_Sans({
   variable: "--font-shantell_sans",
+  subsets: ["latin"],
   weight: ["300", "400", "500"],
 });
 
 const ubuntu_sans = Ubuntu({
   variable: "--font-ubuntu_sans",
+  subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
 
 const russo_one_sans = Russo_One({
   variable: "--font-russo-one",
+  subsets: ["latin"],
   weight: ["400"],
 });
 
 const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const lilita_one = Lilita_One({
   variable: "--font-lilita-one",
+  subsets: ["latin"],
   weight: ["400"],
 });
 export const metadata = {
