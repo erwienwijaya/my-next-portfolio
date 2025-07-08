@@ -22,7 +22,6 @@ const luckies_guy_sans = Luckiest_Guy({
 
 const shantell_sans = Shantell_Sans({
   variable: "--font-shantell_sans",
-  subsets: ["latin", "cyrillic"],
   weight: ["300", "400", "500"],
 });
 
